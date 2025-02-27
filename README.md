@@ -12,3 +12,6 @@ The projects on this repository are the required ones for a responsive web desig
 ## About the content and images used
   The content and images contained in the web pages: technical documentation page and tribute page are not of my authorship and have been compiled from different sources.
   The images in the web page: product landing page are not of my authorship. But, the content and concept of said page is.
+
+## Certification
+[Here is my certification](https://freecodecamp.org/certification/fcc3cf7643d-73f5-4d3f-b3b1-e15b3106fbe5/responsive-web-design)
