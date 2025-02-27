@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css"/>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/900px-Lua-Logo.svg.png"/>
+    <title>Lua Technical Documentation</title>
+</head>
+<body>
+    <header id="page-header">
+        <nav id="navbar">
+            <header>Lua</header>
+            <a class="nav-link" href="#Introduction">Introduction</a>
+            <a class="nav-link" href="#Values_and_Types">Values and Types</a>
+            <a class="nav-link" href="#Lexical_Conventions">Lexical Conventions</a>
+            <a class="nav-link" href="#Variables">Variables</a>
+            <a class="nav-link" href="#Control_Structures">Control Structures</a>
+            <a class="nav-link" href="#Reference">Reference</a>
+        </nav>
+    </header>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>Lua is a powerful, efficient, lightweight, embeddable scripting language. It supports procedural programming, object-oriented programming, functional programming, data-driven programming, and data description.</p>
+            <p>Lua combines simple procedural syntax with powerful data description constructs based on associative arrays and extensible semantics. Lua is dynamically typed, runs by interpreting bytecode with a register-based virtual machine, and has automatic memory management with a generational garbage collection, making it ideal for configuration, scripting, and rapid prototyping.</p>
+            <p>Lua is implemented as a library, written in clean C, the common subset of standard C and C++. The Lua distribution includes a host program called lua, which uses the Lua library to offer a complete, standalone Lua interpreter, for interactive or batch use. Lua is intended to be used both as a powerful, lightweight, embeddable scripting language for any program that needs one, and as a powerful but lightweight and efficient stand-alone language.</p>
+            <p>As an extension language, Lua has no notion of a "main" program: it works embedded in a host client, called the embedding program or simply the host. (Frequently, this host is the stand-alone lua program.) The host program can invoke functions to execute a piece of Lua code, can write and read Lua variables, and can register C functions to be called by Lua code. Through the use of C functions, Lua can be augmented to cope with a wide range of different domains, thus creating customized programming languages sharing a syntactical framework.</p>
+            <p>Lua is free software, and is provided as usual with no guarantees, as stated in its license. The implementation described in this manual is available at Lua's official web site, www.lua.org.</p>
+        </section>
+        <section class="main-section" id="Values_and_Types">
+            <header>Values and Types</header>
+            <p>Lua is a dynamically typed language. This means that variables do not have types; only values do. There are no type definitions in the language. All values carry their own type.</p>
+            <p>All values in Lua are first-class values. This means that all values can be stored in variables, passed as arguments to other functions, and returned as results.</p>
+            <p>There are eight basic types in Lua: 
+                <ul id="types-list">
+                    <li>nil</li>
+                    <li>boolean</li>
+                    <li>number</li> 
+                    <li>string</li>
+                    <li>function</li> 
+                    <li>userdata</li>
+                    <li>thread</li>
+                    <li>table</li>
+                </ul>
+            </p>
+            <p>The type nil has one single value, nil, whose main property is to be different from any other value; it often represents the absence of a useful value. The type boolean has two values, false and true. Both nil and false make a condition false; they are collectively called false values. Any other value makes a condition true. Despite its name, false is frequently used as an alternative to nil, with the key difference that false behaves like a regular value in a table, while a nil in a table represents an absent key.</p>
+            <p>The type number represents both integer numbers and real (floating-point) numbers, using two subtypes: integer and float. </p>
+            <p>The type string represents immutable sequences of bytes. Lua is 8-bit clean: strings can contain any 8-bit value, including embedded zeros ('\0'). Lua is also encoding-agnostic; it makes no assumptions about the contents of a string. The length of any string in Lua must fit in a Lua integer.</p>
+            <p>Lua can call (and manipulate) functions written in Lua and functions written in C. Both are represented by the type function.</p>
+            <p>The type userdata is provided to allow arbitrary C data to be stored in Lua variables.</p>
+            <p>The type thread represents independent threads of execution and it is used to implement coroutines.</p>
+            <p>The type table implements associative arrays, that is, arrays that can have as indices not only numbers, but any Lua value except nil and NaN.</p>
+        </section>
+        <section class="main-section" id="Lexical_Conventions">
+            <header>Lexical Conventions</header>
+            <p>Lua is a free-form language. It ignores spaces and comments between lexical elements (tokens), except as delimiters between two tokens. In source code, Lua recognizes as spaces the standard ASCII whitespace characters space, form feed, newline, carriage return, horizontal tab, and vertical tab.</p>
+            <p>Names (also called identifiers) in Lua can be any string of Latin letters, Arabic-Indic digits, and underscores, not beginning with a digit and not being a reserved word. Identifiers are used to name variables, table fields, and labels.</p>
+            <p>The following keywords are reserved and cannot be used as names:</p>
+            <code>and   -   break   -   do   -    else   -   elseif  -  end   -    
+                false   -   for    -   function   -   goto   -   if    -    in   -   
+                local  -   nil    -   not    -   or    -    repeat   -   return   -   
+                then   -   true   -   until  -   while</code>
+            <p>Lua is a case-sensitive language: and is a reserved word, but And and AND are two different, valid names. As a convention, programs should avoid creating names that start with an underscore followed by one or more uppercase letters (such as _VERSION).</p>
+        </section>
+        <section class="main-section" id="Variables">
+            <header>Variables</header>
+            <p>Variables are places that store values. There are three kinds of variables in Lua: 
+                <ul>
+                    <li>Global variables</li>
+                    <li>Local variables</li>
+                    <li>Table fields</li>
+                </ul>
+            </p>
+            <p>A single name can denote a global variable or a local variable (or a function's formal parameter, which is a particular kind of local variable):</p>
+            <code>var ::= Name</code>
+            <p>Name denotes identifiers</p>
+            <p>Any variable name is assumed to be global unless explicitly declared as a local. Local variables are lexically scoped: local variables can be freely accessed by functions defined inside their scope.</p>
+            <p>Before the first assignment to a variable, its value is nil.</p>
+            <p>Square brackets are used to index a table:</p>
+            <code>var ::= prefixexp ‘[’ exp ‘]’</code>
+            <p>The meaning of accesses to table fields can be changed via metatables</p>
+            <p>The syntax var.Name is just syntactic sugar for var["Name"]:</p>
+            <code>var ::= prefixexp ‘.’ Name</code>
+            <p>An access to a global variable x is equivalent to _ENV.x. Due to the way that chunks are compiled, the variable _ENV itself is never global.</p>
+            <br>
+            <p>When asigning a variable, Lua allows multiple assignments. Therefore, the syntax for assignment defines a list of variables on the left side and a list of expressions on the right side. The elements in both lists are separated by commas:</p>
+            <code>stat ::= varlist ‘=’ explist <br>
+                varlist ::= var {‘,’ var} <br>
+                explist ::= exp {‘,’ exp}</code>
+        </section>
+        <section class="main-section" id="Control_Structures">
+            <header>Control Structures</header>
+            <p>The control structures if, while, and repeat have the usual meaning and familiar syntax:</p>
+            <code>stat ::= while exp do block end <br>
+                stat ::= repeat block until exp <br>
+                stat ::= if exp then block {elseif exp then block} [else block] end</code>
+            <p>Lua also has a for statement, in two flavors</p>
+            <p>The condition expression of a control structure can return any value. Both false and nil test false. All values different from nil and false test true. In particular, the number 0 and the empty string also test true.</p>
+            <p>In the repeat–until loop, the inner block does not end at the until keyword, but only after the condition. So, the condition can refer to local variables declared inside the loop block.</p>
+            <p>The break statement terminates the execution of a while, repeat, or for loop, skipping to the next statement after the loop:</p>
+            <code>stat ::= break</code>
+            <p>A break ends the innermost enclosing loop.</p>
+            <p>The return statement is used to return values from a function or a chunk (which is handled as an anonymous function). Functions can return more than one value, so the syntax for the return statement is</p>
+            <code>stat ::= return [explist] [‘;’]</code>
+            <p>The return statement can only be written as the last statement of a block. If it is necessary to return in the middle of a block, then an explicit inner block can be used, as in the idiom do return end, because now return is the last statement in its (inner) block.</p>
+            <p>The for statement has two forms: one numerical and one generic.</p>
+            <p>The numerical for loop repeats a block of code while a control variable goes through an arithmetic progression. It has the following syntax:</p>
+            <code>stat ::= for Name ‘=’ exp ‘,’ exp [‘,’ exp] do block end</code>
+            <p>The generic for statement works over functions, called iterators. On each iteration, the iterator function is called to produce a new value, stopping when this new value is nil. The generic for loop has the following syntax:</p>
+            <code>stat ::= for namelist in explist do block end <br>
+                namelist ::= Name {‘,’ Name}</code>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <p>All the information on this page is available <a href="https://www.lua.org/manual/5.4/manual.html#2.1">here</a></p>
+        </section>
+    </main>
+</body>
+</html>

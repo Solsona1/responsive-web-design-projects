@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Restaurant Survey</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+  <body>
+    <main>
+      <h1 id="title">Restaurant Survey</h1>
+      <p id="description">Please let us know what we are doing right and what we need to improve by filling out this survey</p>
+
+      <form id="survey-form">
+        <fieldset id="personal-info">
+          <label id="name-label" for="name">Name <input class="container" id="name" type="text" placeholder="Enter your name" required autocomplete="given-name"/></label>
+          <label id="email-label" for="email">Email <input class="container" id="email" type="email" placeholder="Enter your email" required autocomplete="email"/></label>
+          <label id="number-label" for="number">Age (optional)<input class="container" id="number" type="number" min="13" max="120" placeholder="Enter your age"/></label>
+          </fieldset>
+
+        <fieldset id="about-order">
+          <label id="label-dropdown">Time of your visit
+            <select class="container" id="dropdown">
+              <option value="">Select an option</option>
+              <option value="1">Breakfast</option>
+              <option value="2">Lunch</option>
+              <option value="3">Dinner</option>
+            </select>
+          </label>
+          <label class="inline-label" id="label-dinein" for="dine-in"><input id="dine-in" type="radio" name="in-out" value="dine-in"/> Dine in</label>
+          <label class="inline-label" id="lable-takeout" for="take-out"><input id="take-out" type="radio" name="in-out" value="take-out"/> Take out</label>
+          <label  for="order">What did you order? <textarea class="container" id="order" placeholder="Write your order here..."></textarea></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Quality of food: </legend>
+          <label class="inline-label"><input name="quality" type="radio" value="1"/> Excellent</label>
+          <label class="inline-label"><input name="quality" type="radio" value="2"/> Good</label>
+          <label class="inline-label"><input name="quality" type="radio" value="3"/> Fair</label>
+          <label class="inline-label"><input name="quality" type="radio" value="4"/> Poor</label>
+        </fieldset>
+        <fieldset>
+          <legend>Portion size: </legend>
+          <label class="inline-label"><input name="portion-size" type="radio" value="1"/> Excellent</label>
+          <label class="inline-label"><input name="portion-size" type="radio" value="2"/> Good</label>
+          <label class="inline-label"><input name="portion-size" type="radio" value="3"/> Fair</label>
+          <label class="inline-label"><input name="portion-size" type="radio" value="4"/> Poor</label>
+        </fieldset>
+        <fieldset>
+          <legend>Ease of ordering: </legend>
+          <label class="inline-label"><input name="ordering" type="radio"value="1"/> Excellent</label>
+          <label class="inline-label"><input name="ordering" type="radio" value="2"/> Good</label>
+          <label class="inline-label"><input name="ordering" type="radio" value="3"/> Fair</label>
+          <label class="inline-label"><input name="ordering" type="radio" value="4"/> Poor</label>
+        </fieldset>
+        <fieldset>
+          <legend>Service: </legend>
+          <label class="inline-label"><input name="service" type="radio" value="1"/> Excellent</label>
+          <label class="inline-label"><input name="service" type="radio" value="2"/> Good</label>
+          <label class="inline-label"><input name="service" type="radio" value="3"/> Fair</label>
+          <label class="inline-label"><input name="service" type="radio" value="4"/> Poor</label>
+        </fieldset>
+        <fieldset>
+          <legend>Cleanliness: </legend>
+          <label class="inline-label"><input name="cleanliness" type="radio" value="1"/> Excellent</label>
+          <label class="inline-label"><input name="cleanliness" type="radio" value="2"/> Good</label>
+          <label class="inline-label"><input name="cleanliness" type="radio" value="3"/> Fair</label>
+          <label class="inline-label"><input name="cleanliness" type="radio" value="4"/> Poor</label>
+        </fieldset>
+
+        <fieldset id="review">
+          <label for="comments">Do you have any comments you would like to share? <textarea id="comments" class="container" placeholder="Write your comments here..."></textarea></label>
+          <span>How did you learn about us?</span>
+          <label for="sns"><input id="sns" type="checkbox" value="sns"/> Social Media</label>
+          <label for="friend"><input id="friend" type="checkbox" value="friend"/> A friend</label>
+          <label for="third-party"><input id="third-party" type="checkbox" value="third-party"/> Third-party Review</label>
+          <label for="ad"><input id="ad" type="checkbox" value="ad"/> Internet advertisement</label>
+          <label for="other"><input id="other" type="checkbox" value="other"/> Other</label>
+        </fieldset>
+
+        <input id="submit" type="submit"/>
+      </form>
+    </main>
+  </body>
+</html>

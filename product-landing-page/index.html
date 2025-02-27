@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css"/>
+    <title>Zippy Glow</title>
+    <link rel="icon" href="https://i.pinimg.com/736x/35/37/cd/3537cd206b27c46da02f33e795819d8b.jpg" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <span class="sr-only">Zippy Glow</span>
+        <img 
+            id="header-img" 
+            src="./logo.png" 
+            alt="Zippy Glow Logo"
+        />
+        <nav id="nav-bar">
+            <a class="nav-link" href="#Get_the_experience">Get the experience</a>
+            <a class="nav-link" href="#Our_Products">Our Products</a>
+            <a class="nav-link" href="#Contact_us">Contact us</a>
+        </nav>
+    </header>
+    <main>
+        <section id="Get_the_experience">
+            <h1><mark>Rediscover the Simple Joy of Connection.</mark></h1>
+            <h2>Unplug from the digital overload and embrace a simpler, more intentional way to communicate.</h2>
+            <p><mark>Remember when phones were for talking?  Our flip phones bring back the classic, tactile experience of a phone that fits comfortably in your hand and focuses on what matters most: connecting with the people you care about. Experience longer battery life, crystal-clear calls, and the <i><b>satisfying click of a flip.</i></b></mark></p>
+            <iframe 
+                id="video"
+                src="https://www.youtube.com/embed/wjkPaBRbdsI">
+            </iframe>
+            <img 
+                id="woman-img"
+                src="https://cdn.pixabay.com/photo/2025/02/06/14/09/woman-9387610_1280.jpg" 
+                alt="woman talking on the phone" 
+            />
+        </section>
+        <section id="Our_Products">
+            <legend>Choose your perfect flip</legend>
+            <div class="products-container blur-into-bg">
+                <div class="product">
+                    <img 
+                        class="product-img" 
+                        src="https://i.pinimg.com/736x/34/ab/96/34ab9698369ba5b01e1d78b0d5779f3d.jpg" 
+                        alt=""
+                    />
+                    <h5 class="product-title">Platinum Echo</h5>
+                    <p class="product-description">Long duration battey, voice calls with noise cancellation, double SIM.</p>
+                    <button>Select</button>
+                </div>
+                <div class="product">
+                    <img 
+                        class="product-img" 
+                        src="https://i.pinimg.com/736x/c8/fe/35/c8fe3543c48c32e4efcc913bd656f987.jpg" 
+                        alt=""
+                    />
+                    <h5 class="product-title">Wanderer</h5>
+                    <p class="product-description">Water-resistant design, built-in LED flashlight.</p>
+                    <button>Select</button>
+                </div>
+                <div class="product">
+                    <img 
+                        class="product-img" 
+                        src="https://i.pinimg.com/736x/68/89/07/688907434987f91c1a29205fdaeb3437.jpg" 
+                        alt=""
+                    />
+                    <h5 class="product-title">Candace</h5>
+                    <p class="product-description">Voice-to-text transcription, dedicated memo and note-taking app, aux-in entrance.</p>
+                    <button>Select</button>
+                </div>
+                <div class="product">
+                    <img 
+                        class="product-img" 
+                        src="https://i.pinimg.com/736x/67/43/72/674372a4cd781a2ec477328b87e016fb.jpg" 
+                        alt=""
+                    />
+                    <h5 class="product-title">Blue Melodies</h5>
+                    <p class="product-description">FM radio, bluetooth connectivity for headphones.</p>
+                    <button>Select</button>
+                </div>
+                <div class="product">
+                    <img 
+                        class="product-img" 
+                        src="https://i.pinimg.com/736x/d1/b5/fb/d1b5fbef8d6badf1c91b7a665d306e46.jpg" 
+                        alt=""
+                    />
+                    <h5 class="product-title">Seniority</h5>
+                    <p class="product-description">Hearing aid compatible, voice activated dialing, high-contrast display.</p>
+                    <button>Select</button>
+                </div>
+            </div>
+        </section>
+        <section id="Contact_us">
+            <legend>Have any questions? Get in Touch</legend>
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <fieldset>
+                    <label for="name">
+                        Name:
+                        <input 
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="Enter your name"
+                            autocomplete="given-name"
+                            class="fillable-field"
+                            required
+                        />
+                    </label>
+                    <label for="email">
+                        Email:
+                        <input 
+                            name="email"
+                            type="email" 
+                            id="email" 
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            class="fillable-field"
+                            required
+                        />
+                    </label>
+                    <label for="message">
+                        Leave us a message:
+                        <textarea 
+                            name="message" 
+                            id="message"
+                            placeholder="Enter your message..."
+                            class="fillable-field"
+                            required
+                        ></textarea>
+                    </label>
+                </fieldset>
+                <input type="submit" id="submit"/>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

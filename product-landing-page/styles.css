@@ -1,0 +1,333 @@
+:root {
+    --pumpkin-orange: #ED7F32;
+    --glaucous-blue: #5C83C4;
+    --reseda-green: #638455;
+    --apple-green: #A0BF40;
+    --ivory-white: #FBFFF3;
+    --lighter-cadet-gray: #c2cdd2;
+    --night-black: #0C1011;
+}
+
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+span[class~="sr-only"] {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    width: 1px !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    padding: 0 !important;
+    margin: -1px !important;
+}
+
+body {
+    background-color: var(--ivory-white);
+    font-family: 'Montserrat', serif ;
+    color: var(--night-black);
+}
+
+.blur-into-bg {
+    border-radius: 5px;
+    background-color: var(--ivory-white);
+    box-shadow: 0 0 8px 8px var(--ivory-white);
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: linear-gradient(
+        var(--pumpkin-orange),
+        transparent
+    );
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+#nav-bar {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 100%;
+}
+
+#nav-bar .nav-link {
+    text-decoration: none;
+    color: var(--night-black);
+    font-weight: 600;
+
+    mix-blend-mode: multiply;
+    background-color: var(--ivory-white);
+    padding:0.5%;
+    border-radius: 5px;
+
+    transition: transform 0.4s;
+}
+
+#nav-bar .nav-link:hover {
+    transform: scale(1.1);
+}
+
+#nav-bar .nav-link:active {
+    transform: scale(0.9);
+}
+
+#header-img {
+    flex: 1;
+    height: 2rem;
+    width: auto;
+    object-fit: contain;
+    margin: 0.5rem;
+    border-radius: 5px;
+}
+
+#header-img, #woman-img {
+    mix-blend-mode: multiply;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto 10%;
+    row-gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+legend {
+    font-size: 200%;
+    font-weight: 600;
+}
+
+/* Styles for the presentation section */
+
+#Get_the_experience {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#Get_the_experience h1 {
+    font-size: 250%;
+    font-weight:600;
+    text-align: center;
+}
+
+#Get_the_experience h2 {
+    color: var(--glaucous-blue);
+    background-color: var(--ivory-white);
+    margin-bottom: 1rem;
+}
+
+#Get_the_experience p {
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    font-size: 115%;
+    text-align: justify;
+}
+
+mark {
+    background-color: var(--ivory-white);
+}
+
+#video {
+    width: 50%;
+    height: 20rem;
+}
+
+#woman-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 40%;
+    z-index: -1;
+}
+
+/* Styles for the products section */
+
+#Our_Products .products-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+#Our_Products .product {
+    background-color: var(--lighter-cadet-gray);
+    border-radius: 5px;
+    padding: 2rem;
+    height: 25rem;
+    width: 20rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.product .product-img {
+    width: 16rem;
+    height: 15rem;
+    border-radius: 5px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.product .product-title {
+    font-size: 150%;
+}
+
+.product .product-description {
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.product button {
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+}
+
+.product button:hover {
+    cursor: pointer;
+}
+
+/* Styles for the contact section */
+
+#Contact_us {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#Contact_us form {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    row-gap: 1rem;
+}
+
+#Contact_us fieldset {
+    background-color: var(--apple-green);
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    row-gap: 1rem;
+
+    padding: 2rem;
+    width: 75%;
+    border-radius: 5px;
+}
+
+#Contact_us label {
+    font-size: 150%;
+}
+
+.fillable-field {
+    width: 100%;
+    font-size: 80%;
+    padding: 1%;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+}
+
+#Contact_us textarea {
+    resize: none;
+    height: 6rem;
+}
+
+#Contact_us #submit {
+    font-size: 150%;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: var(--night-black);
+    background-color: var(--apple-green);
+    border: 1px solid var(--apple-green);
+}
+
+#Contact_us #submit:hover, #Contact_us #submit:active {
+    cursor: pointer;
+    color: var(--ivory-white);
+    background-color: var(--reseda-green);
+    border: 1px solid var(--reseda-green);
+}
+
+/* Styling for phones' screens */
+@media (max-width: 500px) {
+    #nav-bar {
+        flex-direction: column;
+        mix-blend-mode: multiply;
+        background-color: var(--ivory-white);
+        padding:0.5%;
+        border-radius: 5px;
+    }
+
+    #nav-bar #nav-link {
+        mix-blend-mode: none;
+        background-color: none;
+        padding: none;
+        border-radius: none;
+    }
+
+    main {
+        margin: auto 5%;
+    }
+
+    #Get_the_experience {
+        gap: 0.5rem;
+        text-align: center;
+        position: relative;
+    }
+
+    #woman-img {
+        min-width: 50%;
+    }
+
+    #Get_the_experience h1 {
+        font-size: 200%;
+        text-align: left;
+        margin-bottom: 5rem;
+        max-width: 50%;
+    }
+
+    #Get_the_experience p {
+        margin-right: 0;
+    }
+
+    #Contact_us form {
+        padding: 0;
+        padding-top: 1rem;
+    }
+
+    #Contact_us fieldset {
+        width: 100%;
+        padding: 1rem;
+    }
+}

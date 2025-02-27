@@ -1,0 +1,111 @@
+html, body {
+    box-sizing: border-box;
+    background-color: #FFFAEC;
+    color: #3D3D3D;
+    font-family: monospace;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+#page-header {
+    position: fixed;
+    top: 0;
+    right: 80%;
+    height: 100%;
+    width: 20%;
+}
+
+#navbar {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+
+    text-align: center;
+    background-color: #F5ECD5;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+#navbar header, #navbar .nav-link {
+    padding: 0;
+    margin: 0;
+}
+
+#navbar header {
+    background-color: #3D3D3D;
+    width: 100%;
+    border-radius: 5px;
+    color: #FFFAEC;
+    text-transform: uppercase;
+}
+
+#navbar .nav-link {
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #3D3D3D;
+}
+
+#main-doc {
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+
+    position: absolute;
+    left: 20%;
+    top: 0;
+}
+
+.main-section {
+    width: 100%;
+}
+
+.main-section header {
+    border-bottom: 2px dotted #578E7E;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.main-section p {
+    text-align: justify;
+}
+
+.main-section a {
+    font-weight: 700;
+    color: #3D3D3D;
+}
+
+.main-section #types-list {
+    list-style: circle;
+}
+
+.main-section code {
+    background-color: hsla(163, 24%, 45%, 0.742);
+    color: #FFFAEC;
+    width: 100%;
+}
+
+/* Phones */
+@media (max-width: 450px) {
+    #page-header {
+        position: relative;
+        right: 0;
+        width: 100%;
+    }
+
+    #main-doc {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 0;
+    }
+}
